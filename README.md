@@ -38,3 +38,27 @@ Este es un proyecto MVP (Minimum Viable Product) de una plataforma de streaming,
 ```bash
 git clone https://github.com/tuusuario/mvp-streaming-app.git
 cd mvp-streaming-app
+
+## Arquitectura pensada
+
++-----------------------+
+|     React Frontend   |  -> desplegado en Fly.io (Docker)
++-----------------------+
+
++-----------------------+
+|     API Gateway       |  -> Spring Boot (Docker)
++-----------------------+
+        |
+        v
++-----------------------+            +------------------------+
+|   Auth Service (Java) | ---------> |  PostgreSQL (externo)  |
++-----------------------+            +------------------------+
+
++-----------------------+
+|  Content Service (Go) |
++-----------------------+
+        |
+        v
++------------------------+
+|  Cassandra (externo)   |
++------------------------+
