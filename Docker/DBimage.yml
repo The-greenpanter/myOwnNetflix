@@ -21,3 +21,6 @@ volumes:
 # docker volume ls para revisar el volumen y agregarlo
 # DRIVER    VOLUME NAME
 #local     pgdata
+
+
+# docker build -t welcome-to-docker
